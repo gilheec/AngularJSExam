@@ -8,7 +8,7 @@
  * Controller of the angularJsexamApp
  */
 angular.module('angularJsexamApp')
-  .factory('Data', ['$http','$q',
+  .factory('Data',['$http','$q', 
   	function($http, $q) {
   		return {
   			getData : function(url) {
@@ -19,7 +19,7 @@ angular.module('angularJsexamApp')
   						'Content-Type':
   						'application/text;charset=utf-8'
   					}
-  				}).then(function(response) {
+  				}).then(function(response){
   					defered.resolve(response);
   				}, function(response) {
   					window.alert(JSON.stringify(response));
@@ -34,11 +34,11 @@ angular.module('angularJsexamApp')
   						'Content-Type':
   						'application/x-www-form-urlencoded'
   					}
-  				}).then(function(response) {
+  				}).then(function(response){
   					defered.resolve(response);
-  				}, function(response) {
+  				}, function(response){
   					defered.resolve(response);
-  				})
+  				});
   				return defered.promise;
   			},
   			modifyData : function(url, data) {
@@ -49,13 +49,13 @@ angular.module('angularJsexamApp')
   						'Content-Type':
   						'application/x-www-form-urlencoded'
   					}
-  				}).then(function(response) {
+  				}).then(function(response){
   					defered.resolve(response);
-  				}, function(response) {
+  				}, function(response){
   					defered.resolve(response);
-  				})
+  				});
   				return defered.promise;
-  			}
+  			},
   			deleteData : function(url, data) {
   				var defered = $q.defer();
   				$http({
@@ -64,11 +64,11 @@ angular.module('angularJsexamApp')
   						'Content-Type':
   						'application/x-www-form-urlencoded'
   					}
-  				}).then(function(response) {
+  				}).then(function(response){
   					defered.resolve(response);
-  				}, function(response) {
+  				}, function(response){
   					defered.resolve(response);
-  				})
+  				});
   				return defered.promise;
   			}
   		}
@@ -80,3 +80,4 @@ angular.module('angularJsexamApp')
       'Karma'
     ];
   });
+  
